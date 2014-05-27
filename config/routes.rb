@@ -1,8 +1,19 @@
 TennisWebsite::Application.routes.draw do
   get "static_pages/index"
-
+  get "static_pages/initiere_copii"
+  get "static_pages/initiere_adulti"
+  get "static_pages/performanta"
+  get "static_pages/sparring"
+  
 
   root to: 'static_pages#index'
+
+  
+  match '/initiere_copii', to: 'static_pages#initiere_copii', via: :get
+  match '/initiere_adulti', to: 'static_pages#initiere_adulti', via: :get
+  match '/performanta', to: 'static_pages#performanta', via: :get
+  match '/sparring', to: 'static_pages#sparring', via: :get
+
 
   match '*path' => redirect('/'), via: :get
 
